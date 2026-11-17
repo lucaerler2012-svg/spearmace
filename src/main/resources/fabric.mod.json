@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "spearmace-fall",
+  "version": "${version}",
+  "name": "SpearMace Fall",
+  "description": "Mit dem Speer in der Hand und fallend (in der Luft) wechselt ein Linksklick auf den Mace. Abgestimmt auf die Mod windspear.",
+  "authors": ["Du"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["de.spearmace.SpearMaceClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*",
+    "windspear": "*"
+  }
+}
