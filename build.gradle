@@ -1,18 +1,32 @@
-plugins {
-    id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+buildscript {
+    repositories {
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "net.fabricmc:fabric-loom:${project.loom_version}"
+    }
+}
+
+apply plugin: 'net.fabricmc.fabric-loom'
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
 }
 
 repositories {
-    // Loom adds essential repositories automatically
-}
-
-loom {
-    mods {
-        "spearmace-fall" {
-            sourceSet sourceSets.main
-            sourceSet sourceSets.client
-        }
+    maven {
+        name = 'Fabric'
+        url = 'https://maven.fabricmc.net/'
     }
+    mavenCentral()
 }
 
 dependencies {
